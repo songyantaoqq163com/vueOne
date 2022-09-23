@@ -7,6 +7,7 @@
 ``` bash
 # install dependencies
 npm install
+//提交失敗使用git ====git init
 
 # serve with hot reload at localhost:8080
 npm run serve
