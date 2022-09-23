@@ -18,7 +18,6 @@ import VCharts from 'v-charts'//v-charts图表
 import VueCookies from 'vue-cookies'
 import VueResource from 'vue-resource'
 import store from './vuex/store'//引入vuex
-
 // Vue.use(getBanners)
 // import axios from 'axios'
 import axios from './js/http'
