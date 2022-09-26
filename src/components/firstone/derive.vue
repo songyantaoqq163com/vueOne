@@ -281,6 +281,8 @@
                     <li>
                       localStorage.clear()//删除全部
                     </li>
+                    <li>案例1： localStorage.setItem('calsendar', JSON.stringify('储存内的key值1234567890'))</li>
+                    <li>案例2：console.log(JSON.parse(localStorage.getItem('calsendar')))</li>
                     <el-button @click="setExpire"
                       >给localStorage一个过期时间</el-button
                     >
@@ -332,7 +334,8 @@
     </div>
   </div>
 </template>
-<script>
+<script>// @ts-nocheck
+
 import html2canvas from "html2canvas";
 export default {
   name: "baoimg",

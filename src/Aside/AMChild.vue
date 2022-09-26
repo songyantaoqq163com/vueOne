@@ -62,7 +62,7 @@ export default {
             },
             {
               id: "2-2",
-              name: "calendar日历",
+              name: "Tab动态增减标签页",
               icon: "el-icon-right",
               path: "/calends"
             },
