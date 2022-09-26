@@ -89,7 +89,8 @@
     </el-row>
   </div>
 </template>
-<script>
+<script>// @ts-nocheck
+
 export default {
   name: 'login',
   data () {

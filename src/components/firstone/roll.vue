@@ -28,7 +28,8 @@
   </div>
   </div>
 </template>
-<script>
+<script>// @ts-nocheck
+
 import infiniteScroll from "vue-infinite-scroll";
 import moment from "moment";
 export default {

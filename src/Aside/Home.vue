@@ -10,8 +10,9 @@
     <el-footer>Footer</el-footer>
   </div>
 </template>
-<script>
-import Header from '@/header/header'
+<script>// @ts-nocheck
+
+import Header from '@/Aside/header'
 import AsideMain from '@/Aside/asideMain'
 // import Aside from "@/Aside/aside";
 export default {
@@ -52,11 +53,11 @@ export default {
 }
 .el-header,
 .el-footer {
-  background-color: #d3dce6;
-  color: red;
+  background-color: #409eff;
+  color: #fff;
   text-align: center;
-  height: 60px;
-  line-height: 60px;
+  height: 40px!important;
+  line-height: 40px!important;
 }
 
 .el-aside {
@@ -73,7 +74,7 @@ export default {
   background-color: #e9eef3;
   color: #333;
   padding: unset;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 80px);
 }
 .Home {
   height: 100vh;

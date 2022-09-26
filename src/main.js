@@ -1,3 +1,4 @@
+// @ts-nocheck
 // The Vue build version to load with the `import` command
 // npm i vuedraggable -S vue拖拽文本互换位置
 // npm install zkr-drag --save 拖拽框
@@ -43,6 +44,7 @@ axios.defaults.baseURL = 'https://www.51tagger.com/maxwell-report' // 关键步�
 // axios.defaults.headers.get['Content-Type'] = 'application/json';
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false // 滚动插件
+import './CssApp/css_app.css'//引入css
 
 require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')

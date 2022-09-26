@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/shouye/HelloWorld'
@@ -53,13 +54,7 @@ let router = new Router({
       path: '/',
       redirect: '/Login'
     },
-    {
-      path: '/Login',
-      name: 'Login',
-      meta: { title: '标题一' },
-      component: Login
-
-    },
+    
     {
       path: '/carteone',
       name: 'carteone',
@@ -104,6 +99,12 @@ let router = new Router({
             requireAuth: true,
           },
           component: calendar
+        },
+        {
+          path: '/Login',
+          name: 'Login',
+          meta: { title: '登录', requireAuth: true, },
+          component: Login
         },
         {
           path: '/hello',

@@ -11,7 +11,8 @@
     </el-menu>
   </div>
 </template>
-<script>
+<script>// @ts-nocheck
+
 import menutree from "./menutree";
 import conmheader from "@/js/conmheader";
 
@@ -34,6 +35,12 @@ export default {
           name: "Aside首页",
           icon: "el-icon-burger",
           child: [
+          {
+              id: "1-0",
+              name: "登录",
+              icon: "el-icon-right",
+              path: "/Login"
+            },
             {
               id: "1-1",
               name: "首页",
@@ -238,6 +245,7 @@ export default {
     },
     initfirst() {
       var data = sessionStorage.getItem("keylist"); //取出
+      // @ts-ignore
       this.activepath = data;
     }
   },

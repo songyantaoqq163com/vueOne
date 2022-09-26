@@ -1,5 +1,5 @@
 <template>
-  <div class="pageFullScreen">
+  <div class="pageFullScreen" style="height:40px">
     <!-- 灰色的头部 -->
     <div>左边</div>
     <div>
@@ -20,6 +20,7 @@ export default {
   components: {},
   data() {
     return {
+      // @ts-ignore
       urling: require("../assets/logo1.png")
     };
   },
@@ -48,10 +49,10 @@ export default {
   justify-content: space-between;
 }
 .whclick {
-  width: 45px;
-  height: 45px;
-  margin-top: 5px;
-  line-height: 45px;
+  width: 30px;
+  height: 30px;
+  /* margin-top: 5px; */
+  line-height: 30px;
   outline: none;
   border: 1px solid gray;
   border-radius: 50%;

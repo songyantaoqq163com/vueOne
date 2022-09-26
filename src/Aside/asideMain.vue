@@ -22,7 +22,8 @@
     </el-row>
   </div>
 </template>
-<script>
+<script>// @ts-nocheck
+
 import {Multipane, MultipaneResizer} from 'vue-multipane';
 import Breadcrumb from "./Breadcrumb.vue"
 import AMChild from "./AMChild";
@@ -73,10 +74,10 @@ export default {
 .login-bg{
    width: 100%;
     height: 100%;
-    background: #3E3E3E;
+    background: #409eff;
 }
 .Mainright {
-  height: calc(100vh - 120px);
+  height: calc(100vh - 80px);
   overflow-y: auto;
   background: #fff;
 }
@@ -89,15 +90,16 @@ export default {
 .routerview{
   margin: 15px;
   padding: 15px;
-  height: calc(100vh - 210px);
+  height: calc(100vh - 170px);
       overflow-y: auto;
   box-shadow:0 0 20px 5px #d3dce6; 
+  border-radius: 5px;
 }
 
 
 .vertical-panes {
         width: 100%;
-        height: calc(100vh - 210px);
+        height: calc(100vh - 170px);
         /* border: 1px solid red; */
     }
 
