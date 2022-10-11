@@ -49,12 +49,13 @@
       </el-col>
     </el-row>
     <!-- 非必要显示 -->
-    <el-dialog title="定时器" :visible.sync="TIMEOUT">
+    <el-dialog title="定时器" :visible.sync="TIMEOUT"  :modal-append-to-body='false'>
+      弹出框有阴影层解决办法:modal-append-to-body='false'
       <p>详情看hover效果</p>
       mounted(){ setInterval(() => { setTimeout(() => { this.clean();
       this.Cvd(); this.Pvd(); this.Print(); }, 0) }, 1000*60) }
     </el-dialog>
-    <el-dialog title="倒计时" :visible.sync="TIMplain">
+    <el-dialog title="倒计时" :visible.sync="TIMplain" :modal-append-to-body='false'>
       <count-down
         :currentTime="1595472277"
         :startTime="1595472277"
@@ -72,6 +73,7 @@
 </template>
 
 <script>
+// @ts-ignore
 import CountDown from "vue2-countdown";
 export default {
   name: "HelloWorld",
@@ -144,6 +146,7 @@ export default {
       //   });
       // 请求two
       // this.$axios.get(`${process.env.URL_PATH}/maxwell-report/user`)
+      // @ts-ignore
       this.$axios
         .get(`/maxwell-report/user`)
         .then((response) => {
@@ -154,6 +157,7 @@ export default {
         });
     },
     nav() {
+      // @ts-ignore
       var SuccessCode = "-1";
       //  switch(SuccessCode){//根据后台返回的data.SuccessCode来判断执行什么语句
       //               case "0":
@@ -188,7 +192,9 @@ export default {
       for (var i = 0; i < arr.length; i++) {
         newArr.unshift(arr[i]);
       }
+      // @ts-ignore
       this.NewArr = newArr;
+      // @ts-ignore
       this.Newnumber = newArr.length;
       console.log(newArr);
     },
@@ -231,6 +237,7 @@ export default {
       this.array = "";
       let ttt = this.$cookies.isKey("token"); // return false or true
       console.log(ttt);
+      // @ts-ignore
       this.array = ttt;
     },
     on() {
@@ -293,6 +300,7 @@ export default {
         return array;
       }
       // console.log(unique(arr)); // => [ 1, 2, 3, 4, 5, 6, 7 ]
+      // @ts-ignore
       this.arr = unique(arr);
     },
     mounted() {},

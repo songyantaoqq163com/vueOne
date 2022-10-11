@@ -67,12 +67,6 @@ export default {
               path: "/calends"
             },
             {
-              id: "2-3",
-              name: "日期选择(接收)",
-              icon: "el-icon-right",
-              path: "/routers/Round"
-            },
-            {
               id: "2-6",
               name: "滚动加载(发送)",
               icon: "el-icon-right",
@@ -107,20 +101,26 @@ export default {
               name: "hover效果",
               icon: "el-icon-right",
               path: "/fistone/hover"
-            },
-            {
-              id: "2-10",
-              name: "vuex方法",
-              icon: "el-icon-right",
-              path: "/fistone/vuextext"
             }
           ]
         },
         {
           id: "3",
-          name: "功能二",
+          name: "Element-UI",
           icon: "el-icon-sugar",
           child: [
+          {
+              id: "3-1-0",
+              name: "日期选择(接收)",
+              icon: "el-icon-right",
+              path: "/routers/Round"
+            },
+            {
+              id: "3-1-1",
+              name: "vuex方法",
+              icon: "el-icon-right",
+              path: "/fistone/vuextext"
+            },
             {
               id: "3-1",
               name: "下拉框处理",
