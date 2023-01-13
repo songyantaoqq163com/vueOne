@@ -4,6 +4,15 @@ html, body {
     width: 100%;
     height: 100%;
   }
+  ol li{
+    text-align: left;
+  }
+  dd dl{
+    text-align: left;
+  }
+  ul li{
+    text-align: left;
+  }
   .red{
     border:1px solid red;
      /* width: 500px;

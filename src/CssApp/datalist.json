@@ -1,0 +1,28 @@
+{
+    "element":[{
+        "text":"表格横排：“<el-form:inline='true'>”",
+        "text2":"moment(this.time).format('YYYY-MM-DD HH:mm:ss.SSS')"
+    },{
+        "text":"css旋转tranform:rotate(90 deg)",
+        "text2":"表格样式：:cell-style='rowClass' rowClass(){return'text-align:center'}"
+    },{
+        "text":"表格内部合并:span-method='arraySpanMethod'arraySpanMethod({ rowIndex, columnIndex }) {//19列 if (rowIndex === 0){ if (columnIndex === 19) { return [6, 1]; } else if (columnIndex === 20) { return [6, 1]; } else { return [1,1]; } }`",
+        "text2":"表头样式：:header-cell-style='headClass'headClass(){return 'background:'#eef1f6''}"
+    },{
+        "text":"遍历数组:for(var i=0;i>this.data.length;i++){}",
+        "text2":" 401拦截 https://www.cnblogs.com/wjhaaa/p/9366073.html"
+    },{
+        "text":"表格不换行：render-header='labelHead'=》 labelHead:function(h, { column }) { labelHead: function(h, { column }) { let l = column.label.length; let f = 15; column.minWidth = f * (l + 2); //加上一个文字长度 return h('div', { class: 'table-head', style: { width: '100%' } }, [ column.label ]); }, },",
+        "text2":"font-family:'微软雅黑' !important;"
+    },{
+        "text":"清除浮动的方法:父元素添加overflow:hidden,after为元素.claefix:afer{},content:'',display:'block',clear:'both',visibility:'hidden',.clearfix{*zoom:1;}"
+    },{
+        "text":"占位位与不占位:display:nine;不占位隐藏  visibility:hidden;占位隐藏"
+    },{
+        "text":"背景占满整个屏幕: background:url('../../src/assets/bgg.png'), width:100%,height:100%;overflow: hidden;background-size:100%100%; position:fixed;"
+    },{
+        "text":" 小手样式及字体间距: cursor:pointer; letter-spacing:10px;"
+    },{
+        "text":" 获取到父元素class: parentElement.parentElement.clasName"
+    }]
+}

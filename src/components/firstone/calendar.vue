@@ -52,7 +52,7 @@
 import { list } from '_postcss@7.0.39@postcss';
 
 export default {
-  name: "calendar",
+  name: "calendar",//Tab动态增减标签页
   components: {},
   data() {
     return {

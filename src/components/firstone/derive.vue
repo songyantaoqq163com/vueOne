@@ -16,85 +16,14 @@
                 @tab-click="handleClick"
               >
                 <el-tab-pane label="element的css样式" name="first">
-                  <ol>
-                    <li>样式生效："style lang="scss" scoped"</li>
-                    <li>表格横排：“el-form:inline="true"”</li>
-                    <li>css旋转tranform:rotate(90 deg)</li>
-                    <li>
-                      表格内部合并：
-                      :span-method="arraySpanMethod"=》arraySpanMethod({
-                      rowIndex, columnIndex }) { //19列 if (rowIndex === 0) { if
-                      (columnIndex === 19) { return [6, 1]; } else if
-                      (columnIndex === 20) { return [6, 1]; } else { return [1,
-                      1]; } }
-                    </li>
-                    <li>
-                      遍历数组:for(var i=0;i>this.data.length;i++){}
-                    </li>
-                    <li>
-                      表格不换行：render-header="labelHead"=》 labelHead:
-                      function(h, { column }) { labelHead: function(h, { column
-                      }) { let l = column.label.length; let f = 15;
-                      column.minWidth = f * (l + 2); //加上一个文字长度 return
-                      h("div", { class: "table-head", style: { width: "100%" }
-                      }, [ column.label ]); }, },
-                    </li>
-                    <li>清除浮动的方法</li>
-                    <li>父元素添加overflow:hidden</li>
-                    <li>
-                      after为元素.claefix:afer{}
-                      content:'',display:'block',clear:'both',visibility:'hidden'
-                    </li>
-                    <li>.clearfix{*zoom:1;}</li>
-                    <li></li>
-                    <li>占位位与不占位</li>
-                    <li>display:nine;不占位隐藏</li>
-                    <li>visibility:hidden;占位隐藏</li>
-                  </ol>
-                  <p>背景占满整个屏幕</p>
-                  <p>
-                    background:url("../../src/assets/bgg.png"),
-                    width:100%,height:100%;overflow: hidden;background-size:100%
-                    100%; position:fixed;
-                  </p>
-                  <p>
-                    小手样式及字体间距: cursor:pointer; letter-spacing:10px;
-                  </p>
-                  <p>
-                    获取到父元素class: parentElement.parentElement.clasName
-                  </p>
-                  <p>
-                    /*数组中，取出满足要求的第一个值*/ const
-                    myArr=[1,2,3,4,8,12]; var v1=myArr.find(value=>value>8);
-                    console.log(v1); /*通过数组下标取对应值*/ var
-                    v2=myArr.find((value,index,arr)=>{ return index==4 });
-                    console.log(v2); /*对象，取出满足要求的下标*/ const
-                    nameArr=[ {id:1,userName:"zhaoqian",age:27},
-                    {id:2,userName:"sunli",age:23},
-                    {id:3,userName:"zhouwu",age:25 },
-                    {id:4,userName:"zhengwang",age:21}];
-                    /*满足条件，返回下标位置2*/ var
-                    i1=nameArr.findIndex((value)=>value.age==25);
-                    console.log(i1); /*没有满足条件的，返回-1*/ var
-                    i2=nameArr.findIndex((value)=>value.age==28);
-                    console.log(i2);
-                  </p>
+                    <ol>
+                      <li v-for="item in Datalist.element" :key="item.index">{{ item.text }}</li>
+                    </ol>
                 </el-tab-pane>
                 <el-tab-pane label="moment.js" name="second">
-                  <dl>
-                    <dd>moment(this.time).format("YYYY-MM-DD HH:mm:ss.SSS")</dd>
-                    <dd>
-                      表格样式：:cell-style="rowClass" rowClass(){return
-                      'text-align:center'}
-                    </dd>
-                    <dd>
-                      表头样式：:header-cell-style="headClass"
-                      headClass(){return 'background:"#eef1f6"'}
-                    </dd>
-                    <dd>
-                      401拦截 https://www.cnblogs.com/wjhaaa/p/9366073.html
-                    </dd>
-                    <dd>font-family:"微软雅黑" !important;</dd>
+                  <dd>
+                    <dl v-for="item in Datalist.element" :key="item.index">{{ item.text2 }}</dl>
+                  </dd>
                     <ol>
                       <li>根据key找到对应的对象</li>
                       <li>
@@ -107,7 +36,6 @@
                       </li>
                       <li>console.log(a)</li>
                     </ol>
-                  </dl>
                 </el-tab-pane>
                 <el-tab-pane label="原生js" name="third">
                   <ul>
@@ -139,16 +67,6 @@
                       <p>取最值，借用math方法</p>
                       <ul>
                         <li>
-                          <!-- let Etas=[];
-                        for(var i=0;i<this.tableData2.length;i++){
-                            if(this.tableData2[i].eta!=null){
-                                Etas.push(this.tableData2[i].eta);
-                            }
-                        };
-                        Etas.sort(function(a,b){
-                            return a-b;
-                        })
-                        var min=Etas[0];var max=Etas[Etas.length-1]; -->
                           <p>获取url的数据</p>
                           <p>
                             var strHref=document.location.toString(); var
@@ -337,11 +255,13 @@
 <script>// @ts-nocheck
 
 import html2canvas from "html2canvas";
+import Datalist from '../../CssApp/datalist.json'
 export default {
   name: "baoimg",
   components: {},
   data() {
     return {
+      Datalist,
       activeName: "first",
       list: [
         {
