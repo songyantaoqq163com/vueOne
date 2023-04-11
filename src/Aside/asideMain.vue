@@ -44,27 +44,26 @@ export default {
     };
   },
   created() {
-    this.initLevel();
+    
     this.initName();
   },
   methods: {
     initName() {
-      if (this.levelList.length !== 0) {
-        this.listmenu = this.levelList[this.levelList.length - 1].name;
+      let keyList=JSON.parse(sessionStorage.getItem("keylist"))
+      if (keyList.length>0) {
+        this.levelList=keyList
+      }else{
+        this.levelList=[]
       }
     },
-    initLevel(p) {
-      const path = p || this.$route.fullPath;
-      let level = [];
-      const menuone = conmheader.findMenuPath(path, null, level);
-      console.log("adiseMain.js", menuone);
-      this.levelList = level.reverse();
-      this.initName();
-    }
+ 
   },
   watch: {
-    $route(to) {
-      this.initLevel(to.fullPath);
+    $route(to,from) {
+     if(to.fullPath!==from.fullPath){
+      let keyList=JSON.parse(sessionStorage.getItem("keylist"))
+      this.levelList=keyList
+     }
     }
   }
 };

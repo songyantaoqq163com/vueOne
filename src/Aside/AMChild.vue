@@ -1,17 +1,12 @@
 <template>
   <div class="AMChild  Mainright">
-    <el-menu
-      :default-active="activepath"
-      router
-      :unique-opened="true"
-      class="lelmenu"
-      @select="handleSelect"
-    >
+    <el-menu :default-active="activepath" router :unique-opened="true" class="lelmenu" @select="handleSelect">
       <menutree :data="menus"></menutree>
     </el-menu>
   </div>
 </template>
-<script>// @ts-nocheck
+<script>
+// @ts-nocheck
 
 import menutree from "./menutree";
 import conmheader from "@/js/conmheader";
@@ -35,7 +30,7 @@ export default {
           name: "Aside首页",
           icon: "el-icon-burger",
           child: [
-          {
+            {
               id: "1-0",
               name: "登录",
               icon: "el-icon-right",
@@ -109,7 +104,7 @@ export default {
           name: "Element-UI",
           icon: "el-icon-sugar",
           child: [
-          {
+            {
               id: "3-1-0",
               name: "日期选择(接收)",
               icon: "el-icon-right",
@@ -150,21 +145,21 @@ export default {
               name: "视频播放",
               icon: "el-icon-right",
               path: "/routers/videpplay"
-            },{
+            }, {
               id: "3-6",
               name: "$on()接收",
               icon: "el-icon-right",
               path: "/routers/Child"
-            },{
+            }, {
               id: "3-7",
               name: "$emit()发送",
               icon: "el-icon-right",
               path: "/routers/MaxChild"
-            },{
-              id:"3-8",
-              name:'ANTV画布',
-              icon:'el-icon-right',
-              path:"/two/antv"
+            }, {
+              id: "3-8",
+              name: 'ANTV画布',
+              icon: 'el-icon-right',
+              path: "/two/antv"
             }
           ]
         },
@@ -214,11 +209,11 @@ export default {
               name: "select下拉框",
               icon: "el-icon-right",
               path: "/element/eleSelect"
-            },{
-              id:'4-8',
-              name:'steps步骤',
-              icon:'el-icon-right',
-              path:'/element/eleSteps'
+            }, {
+              id: '4-8',
+              name: 'steps步骤',
+              icon: 'el-icon-right',
+              path: '/element/eleSteps'
             }
           ]
         },
@@ -240,22 +235,38 @@ export default {
 
     handleSelect(index, indexPath) {
       console.log("AMChild.vue", index, indexPath);
+      sessionStorage.setItem('index',JSON.stringify(index))
+// 面包屑
+      let list=[]
+      for(var i=0;i<indexPath.length;i++){
+        let name=this.Menuslist(this.menus,indexPath[i])
+       list.push(name)
+      }
       this.indexBreadcrumbs = indexPath; // indexPath为一个数组，里面包含选中的菜单，和菜单的index标识
-      sessionStorage.setItem("keylist", index); //存储
+      sessionStorage.setItem("keylist",JSON.stringify(list)); //存储
+    },
+    Menuslist(list,D){
+      for(var i=0;i<list.length;i++){
+        if(list[i].id==D){
+          if(list[i].name)
+          return list[i].name
+          break
+        }else if(list[i].child&&Array.isArray(list[i].child)){
+          let a= this.Menuslist(list[i].child,D)
+          if(a){
+            return a
+          }
+        }
+      }
     },
     initfirst() {
-      var data = sessionStorage.getItem("keylist"); //取出
-      // @ts-ignore
+      var data = JSON.parse(sessionStorage.getItem("index")); //取出下标
       this.activepath = data;
     }
   },
   created() {
-    console.log("created优先级高");
     this.initMenu();
     this.initfirst();
-  },
-  mounted() {
-    console.log("mounted优先级低");
   },
   watch: {
     fullHeight(val) {
@@ -263,7 +274,7 @@ export default {
         this.fullHeight = val;
         this.timer = true;
         let that = this;
-        setTimeout(function() {
+        setTimeout(function () {
           that.timer = false;
         }, 400);
       }
