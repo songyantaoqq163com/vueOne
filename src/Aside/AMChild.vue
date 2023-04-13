@@ -96,6 +96,11 @@ export default {
               name: "hover效果",
               icon: "el-icon-right",
               path: "/fistone/hover"
+            },{
+              id:"2-10",
+              name:"canvas画布",
+              icon:"el-icon-right",
+              path:"/f/canvas"
             }
           ]
         },
