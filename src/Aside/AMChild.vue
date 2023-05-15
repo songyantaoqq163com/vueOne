@@ -28,7 +28,7 @@ export default {
         {
           id: "1",
           name: "Aside首页",
-          icon: "el-icon-burger",
+          icon: "el-icon-s-marketing",
           child: [
             {
               id: "1-0",
@@ -47,7 +47,7 @@ export default {
         {
           id: "2",
           name: "功能一",
-          icon: "el-icon-tableware",
+          icon: "el-icon-s-marketing",
           child: [
             {
               id: "2-1",
@@ -96,18 +96,18 @@ export default {
               name: "hover效果",
               icon: "el-icon-right",
               path: "/fistone/hover"
-            },{
-              id:"2-10",
-              name:"canvas画布",
-              icon:"el-icon-right",
-              path:"/f/canvas"
+            }, {
+              id: "2-10",
+              name: "canvas画布",
+              icon: "el-icon-right",
+              path: "/f/canvas"
             }
           ]
         },
         {
           id: "3",
           name: "Element-UI",
-          icon: "el-icon-sugar",
+          icon: "el-icon-s-marketing",
           child: [
             {
               id: "3-1-0",
@@ -171,7 +171,7 @@ export default {
         {
           id: "4",
           name: "Element",
-          icon: "el-icon-picture-outline-round",
+          icon: "el-icon-s-marketing",
           child: [
             {
               id: "4-1",
@@ -225,7 +225,7 @@ export default {
         {
           id: "5",
           name: "图片预览",
-          icon: "el-icon-dessert",
+          icon: "el-icon-s-marketing",
           path: "/routers/plain"
         }
       ]
@@ -240,25 +240,25 @@ export default {
 
     handleSelect(index, indexPath) {
       console.log("AMChild.vue", index, indexPath);
-      sessionStorage.setItem('index',JSON.stringify(index))
-// 面包屑
-      let list=[]
-      for(var i=0;i<indexPath.length;i++){
-        let name=this.Menuslist(this.menus,indexPath[i])
-       list.push(name)
+      sessionStorage.setItem('index', JSON.stringify(index))
+      // 面包屑
+      let list = []
+      for (var i = 0; i < indexPath.length; i++) {
+        let name = this.Menuslist(this.menus, indexPath[i])
+        list.push(name)
       }
       this.indexBreadcrumbs = indexPath; // indexPath为一个数组，里面包含选中的菜单，和菜单的index标识
-      sessionStorage.setItem("keylist",JSON.stringify(list)); //存储
+      sessionStorage.setItem("keylist", JSON.stringify(list)); //存储
     },
-    Menuslist(list,D){
-      for(var i=0;i<list.length;i++){
-        if(list[i].id==D){
-          if(list[i].name)
-          return list[i].name
+    Menuslist(list, D) {
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].id == D) {
+          if (list[i].name)
+            return list[i].name
           break
-        }else if(list[i].child&&Array.isArray(list[i].child)){
-          let a= this.Menuslist(list[i].child,D)
-          if(a){
+        } else if (list[i].child && Array.isArray(list[i].child)) {
+          let a = this.Menuslist(list[i].child, D)
+          if (a) {
             return a
           }
         }
