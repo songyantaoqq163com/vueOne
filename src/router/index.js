@@ -1,18 +1,18 @@
 // @ts-nocheck
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/shouye/HelloWorld'
+import HelloWorld from '@/components/HelloWorld'
 import infoPlain from "@/components/shouye/infoPlain"
 import plain1 from "@/components/shouye/plain1"
 import info from "@/components/shouye/info"
 import NEWnew from "@/components/shouye/NEWnew"
+import Login from "@/components/Login"
 
 import elmean from "@/components/elmean"
 import plain from "@/routers/Plain"
 import Child from "@/routers/Child"
 import MaxChild from "@/routers/MaxChild"
 import Home from "@/Aside/Home"
-import Login from "@/Aside/Login"
 
 import derive from "@/components/firstone/derive"
 import calendar from "@/components/firstone/calendar"

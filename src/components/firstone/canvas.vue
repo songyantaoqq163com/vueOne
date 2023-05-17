@@ -84,6 +84,7 @@ export default {
             for (let i = 0; i < imgList.length; i++) {
                 _this.ctx.drawImage(
                     imgList[i].img, //规定要使用的图片
+                    // imgList[i].x,imgList[i].y,
                     _this.imgX + imgList[i].x * _this.imgScale, _this.imgY + imgList[i].y * _this.imgScale,//在画布上放置图像的 x 、y坐标位置
                     imgList[i].width * _this.imgScale, imgList[i].height * _this.imgScale //要使用的图像的宽度、高度
                 );
