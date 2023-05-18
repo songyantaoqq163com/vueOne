@@ -145,7 +145,8 @@
     </el-row>
   </div>
 </template>
-<script>
+<script>// @ts-nocheck
+
 import moment from "moment";
 export default {
   name: "wendang",
@@ -153,7 +154,6 @@ export default {
   data() {
     return {
       num: 1, //默认显示
-      activeName: "0",
       activeName: "first",
       activeName2: "first",
       nowtime: new Date(),

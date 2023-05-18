@@ -26,15 +26,13 @@ module.exports = {
             res.json(test)
         })
     },
-    // resolve:{
-    //     alias:{
-    //         '~':path.resolve('./src/components')
-    //     }
-    // }
-    // chainWebpack: config => {
-    //     config.resolve.alias
-    //       .set("components", resolve("src/components"))
-    //   },
+   configureWebpack:{
+    resolve:{
+        alias:{
+            
+        }
+    }
+   }
 }
 
 function resolve(arg0) {
