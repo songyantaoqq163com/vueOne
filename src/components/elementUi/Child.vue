@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import Bus from '../js/busVue'
+import Bus from '../../js/busVue'
 export default {
   name: 'Child',
   components: {},

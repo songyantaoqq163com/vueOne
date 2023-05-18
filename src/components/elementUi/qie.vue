@@ -4,25 +4,12 @@
       <!-- 图1 -->
       <el-col :span="12">
         <div class="red">
-          <el-carousel
-            :interval="2000"
-            arrow="always"
-            :autoplay="false"
-            indicator-position="none"
-            :height="bannerH + 'px'"
-          >
-            <el-carousel-item
-              v-for="(bitem, bindex) in superurl"
-              :key="bindex"
-              style=" display:grid;"
-            >
+          <el-carousel :interval="2000" arrow="always" :autoplay="false" indicator-position="none"
+            :height="bannerH + 'px'">
+            <el-carousel-item v-for="(bitem, bindex) in superurl" :key="bindex" style=" display:grid;">
               <div v-for="(item, index) in bitem.img" :key="index">
                 <p>{{ item.url }}</p>
-                <img
-                  style="width: 200px; height: auto;"
-                  class="bannertt"
-                  :src="item.img"
-                />
+                <img style="width: 200px; height: auto;" class="bannertt" :src="item.img" />
               </div>
             </el-carousel-item>
           </el-carousel>
@@ -32,29 +19,15 @@
       <el-col :span="12">
         <div class="red">
           <template>
-            <el-carousel
-              direction="vertical"
-              :autoplay="false"
-              arrow="always"
-              trigger="click"
-              :height="bannerH + 'px'"
-            >
+            <el-carousel direction="vertical" :autoplay="false" arrow="always" trigger="click" :height="bannerH + 'px'">
               <!-- <el-carousel-item v-for="item in 3" :key="item">
                 <h3 class="medium">{{ item }}</h3>
               </el-carousel-item> -->
               <el-carousel-item>
-                <img
-                  src="https://img.mukewang.com/szimg/5ac2dfe100014a9005400300-360-202.jpg"
-                />
+                <img src="../../img/s (1).png" />
               </el-carousel-item>
-              <el-carousel-item
-                ><img
-                  src="https://img.mukewang.com/szimg/5c62a4dc0812e84106000338-360-202.jpg"
-              /></el-carousel-item>
-              <el-carousel-item
-                ><img
-                  src="https://img.mukewang.com/szimg/5c7c82630820acf806000338-360-202.jpg"
-              /></el-carousel-item>
+              <el-carousel-item><img src="../../img/s (2).png" /></el-carousel-item>
+              <el-carousel-item><img src="../../img/s (3).png" /></el-carousel-item>
             </el-carousel>
           </template>
         </div>
@@ -68,15 +41,8 @@
           <div class="box">
             <ul>
               <!--                            @click="itemClick(index)"-->
-              <li
-                v-for="(item, index) in lists"
-                :key="index"
-                :class="setClass(index)"
-              >
-                <img
-                  :src="item.src"
-                  alt=""
-                  style="; width: 350px; height: 200px " class="box_img" />
+              <li v-for="(item, index) in lists" :key="index" :class="setClass(index)">
+                <img :src="item.src" alt="" style="; width: 350px; height: 200px " class="box_img" />
               </li>
             </ul>
           </div>
@@ -88,7 +54,8 @@
     </el-row>
   </div>
 </template>
-<script>
+<script>// @ts-nocheck
+
 export default {
   name: "pageFullScreen",
   components: {},
@@ -100,8 +67,8 @@ export default {
           img: [
             {
               url: "1",
-              img:
-                "https://img.mukewang.com/szimg/5ac2dfe100014a9005400300-360-202.jpg"
+              img: require("../../assets/s1.png")
+
             }
           ]
         },
@@ -109,8 +76,7 @@ export default {
           img: [
             {
               url: "2",
-              img:
-                "https://img.mukewang.com/szimg/5c62a4dc0812e84106000338-360-202.jpg"
+              img: require("../../assets/s2.png")
             }
           ]
         },
@@ -118,8 +84,7 @@ export default {
           img: [
             {
               url: "3",
-              img:
-                "https://img.mukewang.com/szimg/5c7c82630820acf806000338-360-202.jpg"
+              img: require("../../assets/s3.png")
             }
           ]
         },
@@ -127,8 +92,8 @@ export default {
           img: [
             {
               url: "4",
-              img:
-                "https://img.mukewang.com/szimg/5c7e6835087ef3d806000338-360-202.jpg"
+              // @ts-ignore
+              img:require("../../assets/tot1.png")
             }
           ]
         }
@@ -230,6 +195,7 @@ export default {
 .el-carousel__item.el-carousel__item--card.is-in-stage {
   text-align: center;
 }
+
 /*修改高度*/
 /* /deep/.el-carousel__container {
   height: 150px;
@@ -310,10 +276,11 @@ li.next {
   transform: translate3d(185%, 0, -100px) rotateY(-50deg);
   z-index: 13;
 }
+
 /* 图片颠倒 */
-.box_img{
-        text-align: center;
-        margin: 0 auto;
-        -webkit-box-reflect: below 10px -webkit-linear-gradient(transparent,transparent 50%,rgba(255,255,255,0.6));
-    }
+.box_img {
+  text-align: center;
+  margin: 0 auto;
+  -webkit-box-reflect: below 10px -webkit-linear-gradient(transparent, transparent 50%, rgba(255, 255, 255, 0.6));
+}
 </style>

@@ -28,7 +28,7 @@ export default {
         {
           id: "1",
           name: "Aside首页",
-          icon: "el-icon-s-marketing",
+          icon: "el-icon-s-help",
           child: [
             {
               id: "1-0",
@@ -47,7 +47,7 @@ export default {
         {
           id: "2",
           name: "功能一",
-          icon: "el-icon-s-marketing",
+          icon: "el-icon-s-help",
           child: [
             {
               id: "2-1",
@@ -107,7 +107,7 @@ export default {
         {
           id: "3",
           name: "Element-UI",
-          icon: "el-icon-s-marketing",
+          icon: "el-icon-s-help",
           child: [
             {
               id: "3-1-0",
@@ -171,7 +171,7 @@ export default {
         {
           id: "4",
           name: "Element",
-          icon: "el-icon-s-marketing",
+          icon: "el-icon-s-help",
           child: [
             {
               id: "4-1",
@@ -225,7 +225,7 @@ export default {
         {
           id: "5",
           name: "图片预览",
-          icon: "el-icon-s-marketing",
+          icon: "el-icon-s-help",
           path: "/routers/plain"
         }
       ]

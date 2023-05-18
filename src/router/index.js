@@ -1,51 +1,49 @@
 // @ts-nocheck
 import Vue from 'vue'
 import Router from 'vue-router'
+
+import Adrag from "@/components/carte/Adrag"
+import carteone from "@/components/carte/carteone"
+
 import HelloWorld from '@/components/HelloWorld'
 import infoPlain from "@/components/shouye/infoPlain"
 import plain1 from "@/components/shouye/plain1"
 import info from "@/components/shouye/info"
 import NEWnew from "@/components/shouye/NEWnew"
 import Login from "@/components/Login"
-
 import elmean from "@/components/elmean"
 import plain from "@/routers/Plain"
-import Child from "@/routers/Child"
-import MaxChild from "@/routers/MaxChild"
 import Home from "@/Aside/Home"
 
 import derive from "@/components/firstone/derive"
 import calendar from "@/components/firstone/calendar"
-import Round from "@/components/firstone/Round"
 import echarts from "@/components/firstone/Echarts"
 import echartsone from '@/components/firstone/Echarts1'
 import Roll from "@/components/firstone/roll"
 import prop from "@/components/firstone/prop"
 import newroll from "@/components/firstone/newroll"
 import hover from "@/components/firstone/hover"
-import vuextext from "@/components/firstone/vuextext"
 import canvas from '@/components/firstone/canvas'
 
-import Xialakuang from "@/components/secondtwo/Xialakuang"
-import Wendang from "@/components/secondtwo/Wendang"
-import Text from "@/components/secondtwo/Text"
-import qie from "@/components/secondtwo/qie"
-import videpplay from "@/components/secondtwo/videpplay"
-import antv from "@/components/secondtwo/antv"
+import Breadcrumb from "@/components/element/Breadcrumb"
+import eleinput from "@/components/element/eleinput"
+import elecheckbox from "@/components/element/elecheckbox"
+import eleTable from "@/components/element/eleTable"
+import Dialog from "@/components/element/Dialog"
+import eleupload from "@/components/element/eleupload"
+import eleSelect from "@/components/element/eleSelect"
+import eleSteps from "@/components/element/eleSteps"
 
-import Breadcrumb from "@/element/Breadcrumb"
-import eleinput from "@/element/eleinput"
-import elecheckbox from "@/element/elecheckbox"
-import eleTable from "@/element/eleTable"
-import Dialog from "@/element/Dialog"
-import eleupload from "@/element/eleupload"
-import eleSelect from "@/element/eleSelect"
-import eleSteps from "@/element/eleSteps"
-
-import Adrag from "@/components/carte/Adrag"
-import carteone from "@/components/carte/carteone"
-
-
+import Round from "@/components/elementUi/Round"
+import vuextext from "@/components/elementUi/vuextext"
+import Xialakuang from "@/components/elementUi/Xialakuang"
+import Wendang from "@/components/elementUi/Wendang"
+import Text from "@/components/elementUi/Text"
+import qie from "@/components/elementUi/qie"
+import videpplay from "@/components/elementUi/videpplay"
+import Child from "@/components/elementUi/Child"
+import MaxChild from "@/components/elementUi/MaxChild"
+import antv from "@/components/elementUi/antv"
 
 let router = new Router({
   base: '/www.index/',
@@ -67,7 +65,7 @@ let router = new Router({
         name: "canvas",
         component: canvas,
         meta: { requireAuth: true }
-      },{
+      }, {
         path: '/two/antv',
         name: 'antv',
         component: antv,

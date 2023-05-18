@@ -81,7 +81,8 @@
     </el-row>
   </div>
 </template>
-<script>
+<script>// @ts-nocheck
+
 import moment from "moment";
 
 export default {
@@ -179,6 +180,7 @@ export default {
   created() {
     console.log("父页面接受的数据", this.$route.query);
     this.value22 = this.$route.query;
+    // @ts-ignore
     this.value3 = moment(this.$route.query.Datatimes).format(
       "YYYY-MM-DD HH:mm:ss.SSS"
     );

@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-import Round from '@/components/firstone/Round'
+import Round from '@/components/elementUi/Round'
 import moment from 'moment'
 export default {
   name: 'pageFullScreen',

@@ -50,7 +50,6 @@
             </div>
           </div>
         </div>
-
       </el-col> -->
   </div>
 </template>
@@ -93,7 +92,9 @@ export default {
       this.$refs[formName].validate(valid => {
         if (valid) {
           // 使用 vue-router 路由到指定页面，该方式称之为编程式导航
-          this.$router.replace('/')
+          // this.$router.replace('/')
+          sessionStorage.setItem('key-token', JSON.stringify('123456'))
+          this.$router.push({ path: '/hello' })
         } else {
           return false
         }
@@ -101,7 +102,6 @@ export default {
     },
     login() {
       sessionStorage.setItem('key-token', JSON.stringify('123456'))
-      console.log('登录')
       this.$router.push({ path: '/hello' })
     }
   }

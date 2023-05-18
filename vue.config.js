@@ -9,7 +9,8 @@
 //     }
 // }
 const test =require('./data/test.json');//引入test.json
-module.export = {
+const path=require('path')
+module.exports = {
     devServer:{
         host:'loacalhost',
         proxy:{
@@ -24,5 +25,18 @@ module.export = {
         app.get('/test',(req,res)=>{
             res.json(test)
         })
-    }
+    },
+    // resolve:{
+    //     alias:{
+    //         '~':path.resolve('./src/components')
+    //     }
+    // }
+    // chainWebpack: config => {
+    //     config.resolve.alias
+    //       .set("components", resolve("src/components"))
+    //   },
+}
+
+function resolve(arg0) {
+    throw new Error('Function not implemented.');
 }
